@@ -1,15 +1,15 @@
 class Solution {
   
-  // Time: O(n)
+//   TIme: O(n)
   
 public:
     bool isPalindrome(string s) {
         
         string str = "";
+        
         for(auto &C : s){
-            if((C>64&&C<91)||(C>96&&C<123)||(C>47&&C<58)){
-                str += tolower(char(C));
-            }
+            if(iswalnum(C))
+                str += tolower(char(C));            
         }
         
         int n = str.length();
@@ -19,14 +19,13 @@ public:
                 return false;
         }
         
-        return true;
-        
+        return true;        
         
     }
 };
 
-                                                      // 2nd sol using two pointer concepts & without using ascii code
-
+                                                              // 2nd sol using two pointer concept
+  
 
 class Solution {
   
