@@ -1,6 +1,6 @@
 class Solution {
   
-//   Time: O(n)                                                       Using recusrion & complete search (can be optimized by DP)
+//                                                       Using recusrion & complete search (can be optimized by DP)
   
 public:
     bool canJump(vector<int>& nums) {
