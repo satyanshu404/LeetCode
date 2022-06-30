@@ -1,6 +1,6 @@
 class Solution {
   
-//   Time: O(n)                                                       Using recusrion & complete search
+//   Time: O(n)                                                       Using recusrion & complete search (can be optimized by DP)
   
 public:
     bool canJump(vector<int>& nums) {
@@ -15,7 +15,7 @@ private:
             return true;          
         
         //  recursive way
-        bool path1,path2, path3;       
+        bool path1,path2, opt;       
             
         for(int i = n-1; i >= 0; --i){  
             
@@ -26,9 +26,32 @@ private:
             
             path2 = path1 and pathexists(arr, n-1);
             
-            path3 = (path3 or path2);           
+            opt = (opt or path2);           
             
         }        
-        return path3;
+        return opt;
+    }
+};
+//                                                           2nd way, just shifiting the goal
+
+class Solution {
+  
+//   TIme: o(n)
+  
+public:
+    bool canJump(vector<int>& nums) {
+        
+        int n= nums.size()-1;
+        
+       for(int i = nums.size()-1; i >= 0; --i){
+           if(nums[i] >= n-i)
+               n = i;
+       }
+        
+        if(n == 0)
+            return true;
+        
+        return false;
+    
     }
 };
