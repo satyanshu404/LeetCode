@@ -22,7 +22,7 @@ public:
 };
 
 //                                                                         Method 2
-//                                        
+//                                            good for to find length, but not for to find the subsequence
 
 class Solution {
   
